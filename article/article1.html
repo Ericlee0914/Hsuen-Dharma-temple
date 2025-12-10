@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>略談光明真言（一） - Dharma Wisdom</title>
+    <style>
+        /* 这里是一些专门给文章页面的 CSS，你可以之后搬去 style.css */
+        :root {
+            --primary-color: #8b4513;
+            /* Temple Brown */
+            --text-color: #333;
+            --bg-color: #f9f7f2;
+            /* Rice Paper White */
+        }
+
+        body {
+            font-family: "Noto Serif TC", "Songti TC", serif;
+            /* 比较有书卷气的字体 */
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation (Same as your main page) */
+        nav {
+            padding: 1.5rem;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+        }
+
+        /* Header Section */
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 2rem;
+        }
+
+        h1.article-title {
+            font-size: 2.2rem;
+            color: #2c2c2c;
+            margin-bottom: 1rem;
+        }
+
+        .article-meta {
+            color: #666;
+            font-size: 0.9rem;
+            font-family: sans-serif;
+        }
+
+        /* Content Typography */
+        h2 {
+            margin-top: 2.5rem;
+            color: var(--primary-color);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        h3 {
+            margin-top: 2rem;
+            color: #555;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        /* Mantra List Styling */
+        .mantra-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: sans-serif;
+        }
+
+        .mantra-item {
+            background: white;
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .mantra-num {
+            font-size: 0.8em;
+            color: #999;
+            display: block;
+        }
+
+        .mantra-word {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .mantra-rom {
+            font-size: 0.85em;
+            font-style: italic;
+        }
+
+        /* Footnotes */
+        .footnotes {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        .footnotes h3 {
+            margin-top: 0;
+        }
+
+        .footnotes ol {
+            padding-left: 20px;
+        }
+
+        .footnotes li {
+            margin-bottom: 8px;
+        }
+
+        /* Quote Block */
+        blockquote {
+            background: #fff8f0;
+            border-left: 4px solid #eebb99;
+            margin: 1.5em 0;
+            padding: 1em 20px;
+            font-style: italic;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .article-container {
+                padding: 20px;
+                margin: 0;
+            }
+
+            h1.article-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="../../index.html" class="back-link">← Back to Home (回主页)</a>
+    </nav>
+
+    <main class="article-container">
+
+        <header class="article-header">
+            <h1 class="article-title">略談光明真言（一）</h1>
+            <div class="article-meta">
+                <span>文：李嘉偉</span> &nbsp;|&nbsp;
+                <span>2023-02-24</span> &nbsp;|&nbsp;
+                <span>Dharma Talk</span>
+            </div>
+        </header>
+
+        <article class="article-content">
+
+            <h3>序說</h3>
+            <p>日本的真言宗<sup>[1]</sup>，屬於佛教的密教宗派，其開宗祖師為弘法大師空海（773-835）。由於空海是以平安京（位於現在京都市的市中心區域）的東寺，作為真言宗傳教的根據地，故真言宗又稱「東寺密教」，略稱「東密」<sup>[2]</sup>。
+            </p>
+
+            <p>在真言宗裏為數眾多的真言、咒、陀羅尼<sup>[3]</sup>之中，光明真言被視為是密教教主大日如來（毘盧遮那佛）之真言、一切諸佛菩薩之總咒，因而真言宗信徒特別重視。到了鎌倉時代，由於明惠上人高弁（1173-1232）積極宣揚光明真言與「土砂加持」<sup>[4]</sup>信仰所具有的滅罪生善、往生淨土等功德，這使到光明真言變得普及並開始在民眾之間流行起來。
+            </p>
+
+            <p>在真言宗的角度來看，真言陀羅尼門是佛說的眾多法門之中，最為殊勝的一種，猶如醍醐<sup>[5]</sup>，這是因為真言陀羅尼門不但能夠迅速銷滅有情各種惡業重罪，同時亦能夠令修行者徹底悟入諸法實相，速證涅槃的安穩快樂。<sup>[6]</sup>
+            </p>
+
+            <p>光明真言的具體內容是甚麼？持誦光明真言有何功德利益？應該如何持誦？本文將會從三方面對光明真言作出分析：一、光明真言的內容構成，二、光明真言的功能作用，三、光明真言的操作方法。</p>
+
+            <blockquote>
+                在繼續閱讀之前，請讀者先聽一聽真言宗豊山派金剛院版本的光明真言，以作參考，也請留意影片中的悉曇梵字。
+            </blockquote>
+
+            <h2>第一章：光明真言的內容構成</h2>
+
+            <h3>1. 經典出處</h3>
+            <p>光明真言，全稱「不空大灌頂光真言」，略稱「光言」，其依據的主要經典有菩提流志（562-727）<sup>[7]</sup>譯的《不空羂索神變真言經》（下稱《不空羂索經》）三十卷中的第二十八卷〈灌頂真言成就品第六十八〉、不空（705-774）譯的《不空羂索毘盧遮那佛大灌頂光真言》（下稱《灌頂光真言》）一卷，以及相傳是不空譯的《毘盧遮那佛說金剛頂經光明真言儀軌》（下稱《光明真言儀軌》）。
+            </p>
+
+            <h3>2. 梵字、漢字音譯、羅馬拼音及字面意義</h3>
+            <p>光明真言共二十三個悉曇梵字，漢字音譯共二十七個。茲把漢字音譯<sup>[10]</sup>及梵字的羅馬拼音列出如下：</p>
+
+            <div class="mantra-grid">
+                <div class="mantra-item"><span class="mantra-num">1</span><br><span
+                        class="mantra-word">唵</span><br><span class="mantra-rom">oṃ</span></div>
+                <div class="mantra-item"><span class="mantra-num">2</span><br><span
+                        class="mantra-word">阿</span><br><span class="mantra-rom">a</span></div>
+                <div class="mantra-item"><span class="mantra-num">3</span><br><span
+                        class="mantra-word">謨</span><br><span class="mantra-rom">mo</span></div>
+                <div class="mantra-item"><span class="mantra-num">4</span><br><span
+                        class="mantra-word">伽</span><br><span class="mantra-rom">gha</span></div>
+                <div class="mantra-item"><span class="mantra-num">5</span><br><span
+                        class="mantra-word">尾</span><br><span class="mantra-rom">vai</span></div>
+                <div class="mantra-item"><span class="mantra-num">6</span><br><span
+                        class="mantra-word">嚧</span><br><span class="mantra-rom">ro</span></div>
+                <div class="mantra-item"><span class="mantra-num">7</span><br><span
+                        class="mantra-word">左</span><br><span class="mantra-rom">ca</span></div>
+                <div class="mantra-item"><span class="mantra-num">8</span><br><span
+                        class="mantra-word">曩</span><br><span class="mantra-rom">na</span></div>
+                <div class="mantra-item"><span class="mantra-num">9</span><br><span
+                        class="mantra-word">摩</span><br><span class="mantra-rom">ma</span></div>
+                <div class="mantra-item"><span class="mantra-num">10</span><br><span
+                        class="mantra-word">賀</span><br><span class="mantra-rom">hā</span></div>
+                <div class="mantra-item"><span class="mantra-num">11</span><br><span
+                        class="mantra-word">母</span><br><span class="mantra-rom">mu</span></div>
+                <div class="mantra-item"><span class="mantra-num">12</span><br><span
+                        class="mantra-word">捺囉</span><br><span class="mantra-rom">dra</span></div>
+                <div class="mantra-item"><span class="mantra-num">13</span><br><span
+                        class="mantra-word">麼</span><br><span class="mantra-rom">ma</span></div>
+                <div class="mantra-item"><span class="mantra-num">14</span><br><span
+                        class="mantra-word">抳</span><br><span class="mantra-rom">ṇi</span></div>
+                <div class="mantra-item"><span class="mantra-num">15</span><br><span
+                        class="mantra-word">鉢</span><br><span class="mantra-rom">pa</span></div>
+                <div class="mantra-item"><span class="mantra-num">16</span><br><span
+                        class="mantra-word">納麼</span><br><span class="mantra-rom">dma</span></div>
+                <div class="mantra-item"><span class="mantra-num">17</span><br><span
+                        class="mantra-word">入嚩</span><br><span class="mantra-rom">jva</span></div>
+                <div class="mantra-item"><span class="mantra-num">18</span><br><span
+                        class="mantra-word">攞</span><br><span class="mantra-rom">la</span></div>
+                <div class="mantra-item"><span class="mantra-num">19</span><br><span
+                        class="mantra-word">鉢囉</span><br><span class="mantra-rom">pra</span></div>
+                <div class="mantra-item"><span class="mantra-num">20</span><br><span
+                        class="mantra-word">韈</span><br><span class="mantra-rom">va</span></div>
+                <div class="mantra-item"><span class="mantra-num">21</span><br><span
+                        class="mantra-word">哆</span><br><span class="mantra-rom">rtta</span></div>
+                <div class="mantra-item"><span class="mantra-num">22</span><br><span
+                        class="mantra-word">野</span><br><span class="mantra-rom">ya</span></div>
+                <div class="mantra-item"><span class="mantra-num">23</span><br><span
+                        class="mantra-word">吽</span><br><span class="mantra-rom">hūṃ</span></div>
+            </div>
+
+            <p>此外，若據《光明真言儀軌》，光明真言在句尾還有「發吒娑婆訶」這五個字。雖梵語有其字面意義，但在佛典中多保留原音不譯，因真言具有不可思議力量，且一字含無量義，如空海於《悉曇字母釋》所說：「梵字梵語於一字聲含無量義，改曰唐言，但得片玉，三隅則闕<sup>[15]</sup>。」
+            </p>
+
+            <h3>3. 字義與句義</h3>
+            <p>字義是指每一個梵字所詮表的義理；句義則是把梵字組合而成的語句，逐句闡釋其中所蘊含的意義。</p>
+            <p>現在為大家略述一下光明真言的句義：<sup>[18]</sup></p>
+            <ul>
+                <li><strong>「唵」：</strong>歸命義、三身義、供養義。</li>
+                <li><strong>「阿謨伽」：</strong>不空義、無間義。表示大日如來遍於一切的性質。</li>
+                <li><strong>「尾嚧左曩」：</strong>除暗遍明義。表示大日如來的五智<sup>[19]</sup>光明具有照遍法界，滅除一切無明罪暗的作用。</li>
+                <li><strong>「摩賀母捺囉」：</strong>大印義。表示大日如來的印契（五輪塔）。</li>
+                <li><strong>「麼抳」：</strong>無垢義。表示大日如來的本有淨菩提心，猶如如意寶珠。</li>
+                <li><strong>「鉢納麼」：</strong>蓮花義。表示大日如來的干栗馱（hṛd）心。</li>
+                <li><strong>「入嚩攞」：</strong>光明義。表示大日如來的質多（citta）心。</li>
+                <li><strong>「鉢囉韈哆野」：</strong>轉易義。由此句真言的加持力，能轉易貪瞋癡三毒煩惱業障，證得諸佛如來功德。</li>
+                <li><strong>「吽」：</strong>摧破義、能滿願義。</li>
+            </ul>
+
+            <p>若根據上文釋義，勉強地將光明真言的句義以一句簡單的話作出概括式的總結，大致如下：</p>
+            <blockquote>
+                歸命供養三身如來，以周遍法界光明、大印契、如意寶珠、蓮花、光明，加持轉易苦身，為一切眾生光明灌頂，摧破三毒煩惱，能滿足一切意願！
+            </blockquote>
+
+            <h3>4. 稱為「光明真言」的四個理由</h3>
+            <p>在《光明真言儀軌》中，提到「光明真言」這稱謂的由來：</p>
+            <ol>
+                <li>三世三劫一切諸佛由誦持此真言咒力速得成正覺... 依此名光明真言。</li>
+                <li>此釋迦如來常恒恭敬禮拜，昔修忍辱仙人行間，常誦此真言咒... 故名光明真言。</li>
+                <li>依〔此真言的〕光明力，地獄、餓鬼、畜生、阿修羅等，皆悉解脫惡趣... 故名光明真言。</li>
+                <li>欲令父母靈，生極樂淨土... 彼時從眉間放白毫光明，故名光明真言。</li>
+            </ol>
+
+            <p style="text-align: center; margin-top: 30px;">（待續）</p>
+
+        </article>
+
+        <div class="footnotes">
+            <h3>註釋 / 延伸閱讀</h3>
+            <ol>
+                <li>「真言宗」這名稱，取自《略述金剛頂瑜伽分別聖位修證法門》。</li>
+                <li>相對於東密，由最澄（767-822）開創的日本天台宗所傳之密教，稱為「台密」。</li>
+                <li>「真言」、「咒」、「陀羅尼」等詞彙，雖然各有淵源，但在真言宗裏一般是互為通用。</li>
+                <li>「土砂加持」指以光明真言加持土砂一百零八遍後，再將土砂撒於亡者墓上。</li>
+                <li>醍醐，指由牛乳煉製出來的最上等、最精純之味。</li>
+                <li>參見空海《辯顯密二教論》卷下。</li>
+                <li>另一說生年為572年。</li>
+                <li>淨嚴（1639-1703），真言宗僧侶。</li>
+                <li>亮汰（1622-1680），真言宗豊山派總本山長谷寺第十一世化主。</li>
+                <li>漢字音譯依大正藏《不空羂索毘盧遮那佛大灌頂光真言》。</li>
+                <li>大正藏寫作〔（廿/申）＋蔑〕。</li>
+                <li>梵文原文被認為應該是rta，但真言宗所傳則用上俗語型的rtta。</li>
+                <li>同上註。</li>
+                <li>主要參考林光明，《認識咒語》，頁84-87。</li>
+                <li>原書的字「」，此為「闕」的異體字。</li>
+                <li>道範（1178？-1252），高野山真言宗僧侶。</li>
+                <li>權田雷斧（1846-1934），真言宗豊山派總本山長谷寺第五十八世化主。</li>
+                <li>主要參考權田雷斧的《光明真言句義字義釋》。</li>
+                <li>「五智」为密教特有之说，指大日如来所具智慧之体性。</li>
+                <li>《金剛頂經大瑜伽祕密心地法門義訣》：「五相灌頂之法...」。</li>
+                <li>詳見覺鑁《阿字秘釋》。</li>
+                <li>詳見空海《吽字義》。</li>
+                <li>詳見覺鑁《一期大要秘密集》。</li>
+                <li>詳見《守護國界主陀羅尼經》卷二。</li>
+            </ol>
+        </div>
+
+    </main>
+
+    <script src="articles.js"></script>
+</body>
+
+</html>
