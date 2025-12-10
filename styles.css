@@ -1,0 +1,617 @@
+:root {
+    --primary-gold: #C5A059;
+    --secondary-gold: #D4AF37;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --bg-white: #ffffff;
+    --bg-off-white: #f9f9f9;
+    --nav-height: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', 'Noto Serif JP', serif;
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+/* Typography & Vertical Text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    letter-spacing: 0.2em;
+}
+
+/* Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    background-color: #efebdf;
+
+}
+
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-gold);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero-slider {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 1;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 3;
+}
+
+.hero-content {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    text-align: center;
+    color: white;
+}
+
+.hero-title-vertical {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    z-index: 4;
+    color: white;
+    font-size: 2.5rem;
+    height: 60vh;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    padding-right: 2rem;
+}
+
+.daily-wisdom-container {
+    position: relative;
+    margin-top: -80px;
+    /* Overlap */
+    margin-left: 5%;
+    /* Moved left (was 10%) */
+    z-index: 20;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+    padding: 3.5rem 3rem;
+    /* More whitespace */
+    border-radius: 2px;
+    /* Very sharp, modern corners */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    /* Deeper, more diffused shadow */
+    max-width: 500px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #1a1a1a;
+    /* Thinner, sharper accent */
+    text-align: left;
+}
+
+.daily-wisdom-container p:first-child {
+    /* "Daily Wisdom" Label */
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    /* Wide tracking for elegance */
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    color: #888 !important;
+    /* Muted gray */
+    margin-bottom: 1.5rem !important;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+    display: inline-block;
+}
+
+.daily-wisdom-container p#quote-text {
+    /* The Quote */
+    font-family: 'Playfair Display', serif !important;
+    font-size: 1.35rem !important;
+    line-height: 1.6;
+    color: #222 !important;
+    font-style: italic;
+}
+
+.daily-wisdom-container::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 10rem;
+    color: rgba(0, 0, 0, 0.03);
+    /* Extremely subtle */
+    line-height: 1;
+    pointer-events: none;
+}
+
+/* Sections */
+section {
+    padding: 6rem 10%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--text-dark);
+}
+
+/* Gallery Grid (Masonry-ish) */
+.gallery-container {
+    column-count: 3;
+    column-gap: 1.5rem;
+}
+
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.03);
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 4rem 10% 2rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-column h3 {
+    color: var(--primary-gold);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-gold);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .gallery-container {
+        column-count: 2;
+    }
+
+    .hero-title-vertical {
+        font-size: 1.8rem;
+        right: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        column-count: 1;
+    }
+}
+
+/* Teachings Section - Sengyoji Style */
+#teachings.sengyoji-style {
+    background-color: #efebdf;
+    /* Warm beige from reference */
+    padding: 6rem 10%;
+}
+
+.sengyoji-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    border-bottom: none;
+}
+
+.sengyoji-header .section-title {
+    text-align: left;
+    margin-bottom: 0;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.header-decoration {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-decoration .line {
+    width: 60px;
+    height: 1px;
+    background-color: #999;
+}
+
+.header-decoration .label {
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.teachings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.teaching-card {
+    text-align: left;
+}
+
+.card-image {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 1.5rem;
+    border-radius: 0;
+    /* Sharp corners */
+}
+
+.teaching-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.teaching-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    padding: 0.6rem 2rem;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    /* Pill shape */
+    text-decoration: none;
+    color: #555;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    border-color: #333;
+    color: #333;
+    background: transparent;
+}
+
+/* Discover More Section */
+#discover-more {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.discover-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 1;
+    /* Safety: If there is a tiny 0.1px gap, this makes it black instead of white */
+    background-color: #1a1a1a;
+}
+
+.bg-slice {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Slanted Clip Paths */
+.bg-slice:nth-child(1) {
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+    width: 40%;
+    flex: none;
+}
+
+.bg-slice:nth-child(2) {
+    clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
+    width: 40%;
+    flex: none;
+
+    /* FIX HERE: Changed from -5% to -6.5% to ensure overlap */
+    margin-left: -6.5%;
+}
+
+.bg-slice:nth-child(3) {
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+    flex: 1;
+
+    /* FIX HERE: Changed from -5% to -6.5% */
+    margin-left: -6.5%;
+}
+
+/* Dark Overlay for readability */
+.bg-slice::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.discover-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.discover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.discover-text {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+}
+
+.discover-btn {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.discover-btn:hover {
+    background: white;
+    color: #333;
+}
+
+
+
+
+/* Article List Section */
+.article-list {
+    max-width: 1000px;
+    margin: 0 auto;
+    border-top: 1px solid #ddd;
+    /* Top border for first item */
+}
+
+.article-item {
+    display: flex;
+    align-items: baseline;
+    padding: 2rem 0;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.article-item:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Subtle highlight */
+}
+
+.article-meta {
+    flex: 0 0 300px;
+    /* Width for Date + Tag */
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.article-date {
+    margin-right: 1.5rem;
+}
+
+.article-tag {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--primary-gold);
+    font-size: 0.8rem;
+}
+
+.article-link {
+    font-family: 'Noto Serif JP', serif;
+    /* Good for mixed English/Chinese */
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.article-link:hover {
+    color: var(--primary-gold);
+}
+
+/* View All Circle Button */
+.view-all-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #666;
+    text-decoration: none;
+    margin-left: 2rem;
+    transition: all 0.3s ease;
+}
+
+.view-all-circle:hover {
+    border-color: var(--primary-gold);
+    color: var(--primary-gold);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .article-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .article-meta {
+        flex: auto;
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
