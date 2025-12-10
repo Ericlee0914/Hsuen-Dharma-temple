@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="A comprehensive guide to Buddhist meditation and mindfulness practice. Hsuen Dharma Temple.">
+    <title>Meditation | Hsuen Dharma Temple</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&family=Zen+Kaku+Gothic+New:wght@300;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* * ==========================================================================
+         * 1. DESIGN SYSTEM & VARIABLES
+         * ==========================================================================
+         */
+        :root {
+            /* Palette */
+            --color-bg-main: #FAF9F4;
+            /* Paper White */
+            --color-bg-card: #FFFFFF;
+            /* Pure White */
+
+            --color-ink-primary: #2C2622;
+            /* Deep Charcoal */
+            --color-ink-secondary: #5A524C;
+            /* Soft Taupe */
+
+            --color-accent-gold: #C5A059;
+            /* Temple Gold */
+            --color-accent-rust: #A65E44;
+            /* Incense */
+
+            /* Typography */
+            --font-heading: 'Cinzel', serif;
+            --font-body: 'Lato', sans-serif;
+
+            /* Spacing */
+            --container-width: 800px;
+            /* Focused reading width */
+            --spacing-lg: 4rem;
+        }
+
+        /* * ==========================================================================
+         * 2. CORE STYLES & PAPER TEXTURE
+         * ==========================================================================
+         */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--color-bg-main);
+            color: var(--color-ink-primary);
+            font-family: var(--font-body);
+            font-weight: 400;
+            line-height: 1.9;
+            /* Generous leading for readability */
+            font-size: 19px;
+            overflow-x: hidden;
+            /* Subtle paper grain texture overlay */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+
+        /* Scroll Progress Bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 1000;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: var(--color-accent-gold);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: var(--font-heading);
+            color: var(--color-ink-primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-top: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--color-accent-gold);
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+
+        p {
+            margin-bottom: 2rem;
+            color: var(--color-ink-secondary);
+        }
+
+        /* * ==========================================================================
+         * 3. LAYOUT & HERO
+         * ==========================================================================
+         */
+        .hero-section {
+            height: 60vh;
+            position: relative;
+            background: linear-gradient(rgba(44, 38, 34, 0.3), rgba(44, 38, 34, 0.1)),
+                url('https://images.unsplash.com/photo-1620662776856-2792014b2b1a?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            /* Parallax */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-title-wrapper {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: heroFadeIn 1.5s ease-out forwards 0.5s;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-heading);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hero-main-text {
+            color: #FFF;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            font-family: var(--font-heading);
+            font-size: 4rem;
+        }
+
+        /* * ==========================================================================
+         * 4. ARTICLE CONTAINER & TYPOGRAPHY
+         * ==========================================================================
+         */
+        .article-container {
+            max-width: var(--container-width);
+            margin: -80px auto 0;
+            /* Overlap Hero */
+            background: var(--color-bg-card);
+            padding: 5rem;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 10px 40px rgba(44, 38, 34, 0.08);
+            border-radius: 4px;
+        }
+
+        /* Drop Cap */
+        .drop-cap {
+            float: left;
+            font-family: var(--font-heading);
+            font-size: 5.5rem;
+            line-height: 0.8;
+            padding-right: 1rem;
+            padding-top: 0.5rem;
+            color: var(--color-accent-gold);
+        }
+
+        /* Blockquote with growing border animation */
+        blockquote {
+            margin: 3rem 0;
+            padding-left: 2rem;
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-size: 1.4rem;
+            color: var(--color-ink-primary);
+            position: relative;
+        }
+
+        blockquote::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--color-accent-gold);
+            transform: scaleY(0);
+            /* Start hidden */
+            transition: transform 1s ease-in-out;
+            transform-origin: top;
+        }
+
+        blockquote.in-view::before {
+            transform: scaleY(1);
+            /* Grow when seen */
+        }
+
+        /* Animated List */
+        ul.dharma-list {
+            list-style: none;
+            margin: 2rem 0 2rem 1rem;
+        }
+
+        ul.dharma-list li {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* The Rotating Wheel Bullet */
+        .wheel-bullet {
+            position: absolute;
+            left: 0;
+            top: 6px;
+            color: var(--color-accent-gold);
+            font-size: 1.4rem;
+            animation: spin 12s linear infinite;
+            display: inline-block;
+        }
+
+        /* * ==========================================================================
+         * 5. ANIMATION UTILITIES (SCROLL REVEAL)
+         * ==========================================================================
+         */
+
+        /* The class we apply to elements we want to animate in */
+        .reveal-text {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease-out, transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .reveal-text.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes heroFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Divider Decoration */
+        .divider {
+            text-align: center;
+            margin: 4rem 0;
+            color: var(--color-accent-gold);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .article-container {
+                width: 90%;
+                margin-top: -40px;
+                padding: 2.5rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-main-text {
+                font-size: 2.5rem;
+            }
+
+            body {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <header class="hero-section">
+        <div class="hero-title-wrapper">
+            <span class="hero-subtitle">Hsuen Dharma</span>
+            <h1 class="hero-main-text">The Architecture<br>of Silence</h1>
+        </div>
+    </header>
+
+    <main class="article-container">
+
+        <div class="reveal-text">
+            <span class="hero-subtitle" style="color: var(--color-accent-gold); margin-bottom: 0.5rem;">Practice
+                Guide</span>
+            <h2>Finding the Still Point</h2>
+        </div>
+
+        <div class="reveal-text">
+            <p><span class="drop-cap">I</span>n the architecture of the mind, silence is not merely the absence of
+                noise, but the presence of clarity. As we navigate the digital age, our internal landscapes often mirror
+                the chaos of our external environments—cluttered, reactive, and fragmented. The practice of meditation,
+                as taught in the tradition of the Dharma Realm, serves as the structural reinforcement for our
+                consciousness.</p>
+
+            <p>Venerable Master Hsuan Hua often compared the mind to a "monkey" that is restless and untamed. To bring
+                this monkey to submission requires more than force; it requires the gentle, persistent application of
+                method. This page serves as a digital <em>Bodhimanda</em>—a platform for awakening—where we invite you
+                to transition from the role of a consumer of information to a cultivator of wisdom.</p>
+        </div>
+
+        <div class="divider reveal-text">❖</div>
+
+        <div class="reveal-text">
+            <h3>Experience vs. Interpretation</h3>
+            <p>A central tenet of Buddhist psychology is the separation of <em>Vedana</em> (sensation) from
+                <em>Sanna</em> (perception/labeling). Much of our suffering arises not from what happens to us, but from
+                the narrative we construct around it.
+            </p>
+        </div>
+
+        <blockquote class="reveal-text">
+            "The highest compassion, the only true act of compassion, is to point a person to their own liberation."
+        </blockquote>
+
+        <div class="reveal-text">
+            <p>When you sit to meditate, you may feel pain in your knee. That is the experience. The thought "this will
+                damage my knee forever" or "I am bad at meditating" is the interpretation. The practice is to abide in
+                the sensation without boarding the train of interpretation. By doing so, we create a gap between
+                stimulus and response, and in that gap lies our freedom.</p>
+        </div>
+
+        <div class="divider reveal-text">❖</div>
+
+        <div class="reveal-text">
+            <h3>The Method: Anapanasati</h3>
+            <p>The breath is the only physiological function that is both involuntary (automatic) and voluntary
+                (controlled). It is the bridge between the conscious and unconscious mind. To practice:</p>
+
+            <ul class="dharma-list">
+                <li>
+                    <span class="wheel-bullet">☸</span>
+                    <strong>Establish the Seat:</strong> Sit with the spine erect, like a stack of golden coins. This
+                    physical verticality supports mental alertness.
+                </li>
+                <li>
+                    <span class="wheel-bullet">☸</span>
+                    <strong>Anchor the Attention:</strong> Place your awareness at the tip of the nose or the rise of
+                    the abdomen. Feel the texture of the air.
+                </li>
+                <li>
+                    <span class="wheel-bullet">☸</span>
+                    <strong>The Return:</strong> When the mind wanders (and it will), do not judge. Gently shepherd the
+                    attention back to the breath, as one would guide a wayward lamb.
+                </li>
+            </ul>
+        </div>
+
+        <div class="reveal-text">
+            <p>Through this repetitive returning, we cultivate "Patience like the Earth." The earth does not complain
+                when flowers are thrown on it, nor does it complain when refuse is thrown on it. It simply accepts. In
+                meditation, we learn to accept the rising and falling of our thoughts with the same equanimity.</p>
+        </div>
+
+    </main>
+
+    <footer style="text-align: center; padding: 4rem 1rem; color: var(--color-ink-secondary); font-size: 0.9rem;">
+        <p>&copy; 2024 Hsuen Dharma Temple. All rights reserved.</p>
+        <span class="wheel-bullet" style="position: static; font-size: 1rem;">☸</span>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            /* 1. Scroll Progress Bar */
+            window.addEventListener('scroll', () => {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollPercent = (scrollTop / scrollHeight) * 100;
+                document.getElementById('progressBar').style.width = scrollPercent + "%";
+            });
+
+            /* 2. Intersection Observer for Scroll Reveals */
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15 /* Trigger when 15% of the element is visible */
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        // Optional: Stop observing once revealed so it doesn't fade out again
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Target all elements with class 'reveal-text' and blockquotes
+            const revealElements = document.querySelectorAll('.reveal-text, blockquote');
+            revealElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>
