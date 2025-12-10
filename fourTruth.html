@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Four Noble Truths | Architecture of Freedom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            /* PALETTE MAPPING:
+               Original Gold  ->  Black & Grey (Deep Ink)
+               Original Green ->  Solid Black & Dark Grey blocks
+               Original Sand  ->  #e7e3d7 (The Rice Paper Color)
+               Original Beige ->  White
+            */
+            --color-gold-dark: #000000;
+            /* PURE BLACK */
+            --color-gold-light: #999999;
+            /* LIGHT GREY */
+            --color-gold-mid: #4a4a4a;
+            /* DARK GREY */
+
+            --color-green-deep: #000000;
+            /* SECTION 1 BG: PURE BLACK */
+            --color-green-darker: #1a1a1a;
+            /* BODY BG: ALMOST BLACK */
+
+            --color-beige: #e7e3d7;
+            /* TEXT ON DARK BG (Your Paper Color) */
+            --color-sand: #ffffff;
+            /* WHITE BLOCKS */
+
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.8;
+            color: var(--color-beige);
+            background-color: var(--color-green-darker);
+            overflow-x: hidden;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1,
+        h2,
+        h3 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .gold-text {
+            /* Now strictly Black/Grey Shimmer, no gold */
+            background: linear-gradient(45deg, var(--color-beige), #ffffff, var(--color-beige));
+            background-size: 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* If background is light, we override this later */
+        }
+
+        /* --- LAYOUT UTILITIES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* HERO BACKGROUND: Your Paper Color #e7e3d7 */
+            background: #e7e3d7;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 10px solid black;
+        }
+
+        /* Hero Text must be Black since background is light */
+        .hero .hero-content h1 {
+            font-size: 5rem;
+            letter-spacing: -2px;
+            line-height: 1;
+            background: none;
+            -webkit-text-fill-color: black;
+            color: black;
+        }
+
+        .hero .hero-content p {
+            font-size: 1.5rem;
+            color: #444444;
+            /* Grey */
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 1rem;
+        }
+
+        /* --- GLASSMORPHISM CARD --- */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        /* --- SECTION 1: DUKKHA (Black Background) --- */
+        #dukkha {
+            background-color: #000000;
+            /* PURE BLACK */
+            color: #e7e3d7;
+        }
+
+        /* --- SECTION 2: SAMUDAYA (Dark Grey Gradient) --- */
+        #samudaya {
+            /* GREY GRADIENT */
+            background: linear-gradient(to bottom, #1a1a1a, #444444);
+            color: white;
+        }
+
+        /* --- SECTION 3: NIRODHA (White Background) --- */
+        #nirodha {
+            background-color: #ffffff;
+            /* WHITE */
+            color: #000000;
+            /* BLACK TEXT */
+        }
+
+        /* Override Text for White Section */
+        #nirodha .gold-text {
+            background: none;
+            -webkit-text-fill-color: black;
+            color: black;
+            border-bottom: 3px solid #e7e3d7;
+            display: inline-block;
+        }
+
+        #nirodha h3 {
+            color: #555555;
+        }
+
+        /* Grey Subtitle */
+
+        #nirodha .glass-card {
+            background: #f4f4f4;
+            /* Very Light Grey */
+            border: 1px solid #000;
+            /* Black Border */
+            color: #000;
+            box-shadow: 10px 10px 0px #000;
+            /* Hard Black Shadow */
+        }
+
+        /* --- SECTION 4: MAGGA (Paper Background) --- */
+        #magga {
+            background-color: #e7e3d7;
+            /* PAPER COLOR */
+            color: #000000;
+        }
+
+        #magga .gold-text {
+            background: none;
+            -webkit-text-fill-color: black;
+            color: black;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #000000;
+            /* BLACK LINE */
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: #000000;
+            /* BLACK DOTS */
+            border: 2px solid #e7e3d7;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item.left::after {
+            right: -8px;
+        }
+
+        .timeline-item.right::after {
+            left: -8px;
+        }
+
+        .path-step {
+            padding: 20px;
+            background: #ffffff;
+            /* WHITE CARDS */
+            border: 1px solid #000000;
+            /* BLACK BORDER */
+            border-radius: 0px;
+            /* Sharp corners */
+            box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .path-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.4);
+        }
+
+        .path-step h3 {
+            color: #000000;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .path-step p {
+            color: #555555;
+        }
+
+        /* Grey Text */
+
+        /* --- FANCY LISTS --- */
+        ol.gold-list {
+            list-style: none;
+            counter-reset: li;
+        }
+
+        ol.gold-list li {
+            position: relative;
+            margin-bottom: 20px;
+            padding-left: 50px;
+        }
+
+        ol.gold-list li::before {
+            content: counter(li);
+            counter-increment: li;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            /* BLACK & GREY GRADIENT CIRCLE */
+            background: linear-gradient(135deg, #444, #000);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            font-family: var(--font-body);
+            border: 1px solid #e7e3d7;
+        }
+
+        /* --- MOBILE --- */
+        @media screen and (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item.left,
+            .timeline-item.right {
+                left: 0;
+                text-align: left;
+            }
+
+            .timeline-item.left::after,
+            .timeline-item.right::after {
+                left: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="gold-text">The Four Noble Truths</h1>
+            <p>Cattāri Ariyasaccāni</p>
+            <p style="font-size: 1rem; margin-top: 2rem; opacity: 0.8;">The Architecture of Freedom</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="dukkha">
+            <div class="container">
+                <div class="glass-card">
+                    <h2 class="gold-text">I. Dukkha: The Diagnosis</h2>
+                    <h3 style="color: #999;">Life Has Bugs</h3>
+                    <p>In the source code of the human experience, there exists a fundamental glitch—a persistent
+                        friction between our desire for permanence and the fluid, shifting nature of reality.
+                        <strong>Dukkha</strong> is the friction in the UX of your life. It is the loading spinner that
+                        hangs indefinitely. It is the anxiety that crashes your mental browser just when you feel
+                        secure.
+                    </p>
+                    <br>
+                    <ol class="gold-list">
+                        <li><strong>Dukkha-dukkha (The Crash):</strong> The undeniable pain of birth, aging, illness,
+                            and death. The hardware inevitably fails.</li>
+                        <li><strong>Viparinama-dukkha (Update Anxiety):</strong> The stress of change. Just as you
+                            master the interface of your life, the version updates.</li>
+                        <li><strong>Sankhara-dukkha (System Glitch):</strong> The subtle, background hum of
+                            dissatisfaction. Vaporware trying to be solid.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="samudaya">
+            <div class="container">
+                <div class="glass-card">
+                    <h2 class="gold-text">II. Samudaya: The Etiology</h2>
+                    <h3 style="color: #ccc;">The Infinite Loop</h3>
+                    <p>If Dukkha is the crash, Samudaya is the error log. The cause is <strong>Tanha</strong> (Craving).
+                        Imagine a script running in your mind, an infinite loop:
+                        <code>IF I get this, THEN I will be happy forever.</code> You get the object. The happiness
+                        fades. The variable resets. The script runs again.
+                    </p>
+                    <p style="color: #bbb; margin-top: 20px;">We water these weeds in our mental garden. The Second
+                        Truth teaches us that the weeds of anxiety are not invaders; they are grown by the root system
+                        we nurture daily.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="nirodha">
+            <div class="container">
+                <h2 class="gold-text" style="text-align: center;">III. Nirodha: The Prognosis</h2>
+                <h3 style="text-align: center; margin-bottom: 40px;">The Zero State</h3>
+                <div class="glass-card">
+                    <p>The Third Noble Truth is the "Good News." It is the prognosis that the disease is curable.
+                        <strong>Nirodha</strong> means "Cessation."
+                    </p>
+                    <p>This is the <strong>Zero State</strong>—a mind of luminous clarity, unburdened by the compulsion
+                        to chase or reject. Imagine a computer running cool, silent, and fast after a "Clean Install."
+                        The malware of greed is gone. It is the peace of the empty recycle bin.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="magga">
+            <div class="container">
+                <h2 class="gold-text" style="text-align: center;">IV. Magga: The Prescription</h2>
+                <p style="text-align: center;">The User Flow to Liberation: The Noble Eightfold Path.</p>
+
+                <div class="timeline">
+                    <div class="timeline-item left">
+                        <div class="path-step">
+                            <h3>1. Right View</h3>
+                            <p>Seeing the code of reality as it is—impermanent and interconnected.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="path-step">
+                            <h3>2. Right Intention</h3>
+                            <p>Renouncing the loop of craving. The commitment to refactor.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="path-step">
+                            <h3>3. Right Speech</h3>
+                            <p>Communication without malware. No lying, no harshness.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="path-step">
+                            <h3>4. Right Action</h3>
+                            <p>Behaving without bugs. No killing, stealing, or harm.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="path-step">
+                            <h3>5. Right Livelihood</h3>
+                            <p>Sustaining your system without corrupting the network of others.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="path-step">
+                            <h3>6. Right Effort</h3>
+                            <p>The active antivirus—preventing unwholesome states.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="path-step">
+                            <h3>7. Right Mindfulness</h3>
+                            <p>System monitoring—constant awareness of the process.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="path-step">
+                            <h3>8. Right Concentration</h3>
+                            <p>CPU Optimization—singular focus and penetrating insight.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

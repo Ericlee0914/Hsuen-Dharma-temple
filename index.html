@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hsuen Dharma | Temple of Serenity</title>
+    <meta name="description" content="Welcome to Hsuen Dharma, a place of peace, prayer, and community.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Noto+Serif+JP:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header id="main-header">
+        <a href="index.html" class="logo">
+            <img src="new_logo.png  " alt="Hsuen Dharma Logo" style="height: 40px; margin-right: 12px;">
+            Hsuen Dharma
+        </a>
+        <button class="mobile-menu-btn" aria-label="Toggle Menu">☰</button>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- Hero Slider -->
+    <div class="hero-slider">
+        <!-- Slides -->
+        <div class="hero-slide active" style="background-image: url('pic/IMG_4108.jpeg');"></div>
+        <div class="hero-slide" style="background-image: url('pic/IMG_8158.jpeg');"></div>
+        <div class="hero-slide" style="background-image: url('pic/IMG_8365.jpeg');"></div>
+        <div class="hero-slide" style="background-image: url('pic/IMG_9052.jpeg');"></div>
+        <div class="hero-slide" style="background-image: url('pic/IMG_4119.jpeg');"></div>
+    </div>
+
+    <!-- Daily Wisdom Container (Overlay) -->
+    <div class="daily-wisdom-container">
+        <p style="font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--primary-gold);">Daily
+            Wisdom</p>
+        <p id="quote-text" style="font-size: 1rem; font-style: italic; color: var(--text-dark);">"Peace comes from
+            within. Do not seek it without."</p>
+    </div>
+
+    <!-- Teachings Section -->
+    <section id="teachings" class="sengyoji-style">
+        <div class="sengyoji-header">
+            <h2 class="section-title">Teachings of the Buddha</h2>
+            <div class="header-decoration">
+                <span class="line"></span>
+                <span class="label">Wisdom</span>
+            </div>
+        </div>
+        <div class="teachings-grid">
+            <!-- Teaching 1 -->
+            <div class="teaching-card">
+                <div class="card-image" style="background-image: url('teaching_1.png');"></div>
+                <h3>The Four Noble Truths</h3>
+                <p>Understanding the truth of suffering and the path to liberation.</p>
+                <a href="fourTruth.html" class="learn-more-btn">Learn More</a>
+            </div>
+            <!-- Teaching 2 -->
+            <div class="teaching-card">
+                <div class="card-image" style="background-image: url('teaching_2.png');"></div>
+                <h3>Compassion & Kindness</h3>
+                <p>Cultivating Metta and Karuna for all living beings.</p>
+                <a href="#" class="learn-more-btn">Learn More</a>
+            </div>
+            <!-- Teaching 3 -->
+            <div class="teaching-card">
+                <div class="card-image" style="background-image: url('teaching_3.png');"></div>
+                <h3>Meditation</h3>
+                <p>Finding clarity through mindfulness and inner reflection.</p>
+                <a href="meditation.html" class="learn-more-btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles" class="sengyoji-style">
+        <div class="sengyoji-header">
+            <h2 class="section-title">Dharma Wisdom</h2>
+
+            <div class="header-decoration">
+                <span class="line"></span>
+                <span class="label">Readings</span>
+                <a href="#" class="view-all-circle">View All ↗</a>
+            </div>
+        </div>
+        <div class="article-list" id="article-container"></div>
+    </section>
+
+    <!-- Discover More Section -->
+    <section id="discover-more">
+        <div class="discover-bg">
+            <div class="bg-slice" style="background-image: url('pic/IMG_4323.jpeg');"></div>
+            <div class="bg-slice" style="background-image: url('pic/IMG_7047.jpeg');"></div>
+            <div class="bg-slice" style="background-image: url('pic/IMG_8365.jpeg');"></div>
+        </div>
+        <div class="discover-content">
+            <h2 class="discover-title">Hsuen Dharma<br>More</h2>
+            <p class="discover-text">Want to know more about Hsuen Dharma?</p>
+            <a href="about.html" class="discover-btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Hsuen Dharma</h3>
+                <p>123 Serenity Lane,<br>Peaceful City, PC 12345</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">info@hsuendharma.com</p>
+            </div>
+            <div class="footer-column">
+                <h3>Menu</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Hsuen Dharma Temple. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
